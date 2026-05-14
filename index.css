@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-f1-red: #E10600;
+  --color-f1-black: #15151E;
+  --color-f1-dark: #1F1F27;
+  --color-f1-gray: #38383F;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-f1-black font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight uppercase;
+  }
+}
+
+@layer components {
+  .f1-skew {
+    transform: skewX(-12deg);
+  }
+  
+  .f1-unskew {
+    transform: skewX(12deg);
+  }
+
+  .f1-button-red {
+    @apply bg-f1-red text-white py-2 px-6 font-bold uppercase tracking-wider transition-all hover:bg-black hover:text-white relative overflow-hidden;
+  }
+
+  .f1-button-blue {
+    @apply bg-blue-700 text-white py-2 px-6 font-bold uppercase tracking-wider transition-all hover:bg-f1-black hover:text-white relative overflow-hidden;
+  }
+
+  .f1-button-hybrid {
+    @apply bg-gradient-to-r from-f1-red to-blue-700 text-white py-2 px-6 font-bold uppercase tracking-wider transition-all hover:from-blue-700 hover:to-f1-red relative overflow-hidden shadow-lg;
+  }
+
+  .f1-card {
+    @apply bg-white border border-gray-200 p-6 transition-all hover:border-f1-red hover:shadow-xl relative;
+  }
+  
+  .f1-card-red {
+    @apply bg-f1-red text-white p-6 transition-all hover:bg-f1-black relative;
+  }
+
+  .f1-border-bottom {
+    @apply border-b-4 border-f1-red;
+  }
+}
